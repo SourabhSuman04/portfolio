@@ -1,0 +1,27 @@
+<section class="contact-section">
+    <div class="content-wrapper">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <p>
+                    I'm currently looking for new opportunities. Whether you have a question or just want to say
+                    hi, I'll try my best to get back to you!
+                </p>
+                <div class="contact-details">
+                    <div class="detail-item">
+                        <span class="label">Email:</span>
+                        <a [href]="'mailto:' + email">{{ email }}</a>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Phone:</span>
+                        <a [href]="'tel:' + phone">{{ phone }}</a>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">LinkedIn:</span>
+                        <span>{{ linkedin }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

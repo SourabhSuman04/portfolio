@@ -1,0 +1,105 @@
+.experience-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    h2 {
+        text-align: center;
+    }
+
+    .timeline {
+        position: relative;
+        padding-left: 2rem;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: #233554;
+        }
+    }
+
+    .timeline-item {
+        position: relative;
+        margin-bottom: 3rem;
+        background: #0a0a0a;
+        padding: 2rem;
+        border-radius: 6px;
+        border: 1px solid #222;
+        transition: all 0.3s ease;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: -2.4rem; // Align with timeline line
+            top: 2rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid #000;
+            transition: all 0.3s;
+        }
+
+        &:hover {
+            transform: translateX(10px);
+            border-color: #fff;
+            box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.9);
+
+            &::before {
+                transform: scale(1.5);
+                box-shadow: 0 0 10px #fff;
+            }
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #e6f1ff;
+            margin-bottom: 0.5rem;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            color: #64ffda;
+            font-family: 'Share Tech Mono', monospace;
+            margin-bottom: 0.5rem;
+        }
+
+        .location,
+        .duration {
+            font-size: 0.9rem;
+            color: #8892b0;
+            margin-bottom: 0.2rem;
+            display: inline-block;
+            margin-right: 1rem;
+
+            &::before {
+                content: '// ';
+                color: #64ffda;
+            }
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+
+            li {
+                position: relative;
+                padding-left: 1.5rem;
+                margin-bottom: 0.8rem;
+                color: #a8b2d1;
+
+                &::before {
+                    content: '▹';
+                    position: absolute;
+                    left: 0;
+                    color: #64ffda;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+<header>
+    <div class="logo"></div>
+    <nav>
+        <ul>
+            @for (item of navItems; track item.label) {
+            <li><a [href]="item.link">{{ item.label }}</a></li>
+            }
+        </ul>
+    </nav>
+</header>
