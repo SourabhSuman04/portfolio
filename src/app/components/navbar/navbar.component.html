@@ -1,0 +1,53 @@
+<!-- start navbar -->
+<nav class="navbar navbar-expand-lg fixed-top sticky" [class.nav-sticky]="isSticky" id="navbar">
+    <div class="container">
+        <a routerLink="/" (click)="navigate('home')" class="navbar-brand d-flex align-items-center">
+            <span class="fs-22 fw-bold text-white font-secondary">SOURABH<span class="text-primary">.SUMAN</span></span>
+        </a><!--end navbar-brand-->
+        <a href="javascript:void(0)" class="navbar-toggler" (click)="toggleMenu()" aria-controls="navbarNav"
+            [attr.aria-expanded]="isMenuOpen" aria-label="Toggle navigation">
+            <span class="navbar-toggle-icon"><i data-feather="menu"></i></span>
+        </a><!--end navbar-toggler-->
+
+        <div class="collapse navbar-collapse" [class.show]="isMenuOpen" id="navbarNav">
+            <ul class="navbar-nav mx-auto navbar-center mt-lg-0 mt-2">
+                <li class="nav-item">
+                    <a class="nav-link" [class.active]="activeSection === 'home'" (click)="navigate('home')">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [class.active]="activeSection === 'about'" (click)="navigate('about')">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [class.active]="activeSection === 'skills'"
+                        (click)="navigate('skills')">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [class.active]="activeSection === 'experience'"
+                        (click)="navigate('experience')">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [class.active]="activeSection === 'projects'"
+                        (click)="navigate('projects')">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [class.active]="activeSection === 'education'"
+                        (click)="navigate('education')">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [class.active]="activeSection === 'contact'"
+                        (click)="navigate('contact')">Contact</a>
+                </li>
+            </ul>
+            <div class="d-flex align-items-center mb-3 mb-lg-0">
+                <a href="Sourabh_Suman_ATS_Resume.pdf" download="Sourabh_Suman_ATS_Resume.pdf"
+                    class="btn btn-sm btn-outline-primary me-2">
+                    <i class="ti ti-download me-1"></i> Resume
+                </a>
+                <a (click)="navigate('contact')" style="cursor: pointer;" class="btn btn-sm nav-btn text-white">
+                    Hire Me! <i class="icon-xxs ms-1" data-feather="chevrons-right"></i>
+                </a>
+            </div>
+        </div><!-- end #navbarNav -->
+    </div><!-- end container -->
+</nav>
+<!-- end navbar -->

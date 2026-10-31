@@ -1,0 +1,63 @@
+<!-- start hero -->
+<section class="hero-one position-relative" id="blogs-hero">
+    <div class="container position-relative z-i-2">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-8 text-center">
+                <span class="badge badge-soft-cyan mb-3">Technical Writing</span>
+                <h1 class="hero-title text-white">Engineering Insights & Architecture</h1>
+                <p class="hero-subtitle">
+                    Technical deep-dives on .NET 8, SQL Server query optimization, WebRTC signaling, and enterprise Angular design.
+                </p>
+            </div><!--end col-->                  
+        </div><!--end row-->             
+    </div><!-- end container -->
+</section>
+<!-- end hero -->
+
+<!-- start blogs -->
+<section class="section bg-light" id="blogs">
+    <div class="container position-relative z-i-2">     
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" *ngFor="let blog of blogs">
+                <div class="card rounded border-0 h-100 d-flex flex-column overflow-hidden">
+                    <div style="height: 200px; overflow: hidden; position: relative;">
+                        <img [src]="blog.image" [alt]="blog.title" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(19, 25, 43, 0.9) 100%);"></div>
+                    </div>
+
+                    <div class="card-body p-4 d-flex flex-column flex-grow-1">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <span class="text-primary fs-12 fw-semibold"><i class="ti ti-clock me-1"></i>{{ blog.readTime }}</span>
+                            <span class="text-muted fs-12">{{ blog.date }}</span>
+                        </div>
+
+                        <a routerLink="/blog-detail" class="fs-18 fw-bold text-white mb-2 d-block hover-cyan">
+                            {{ blog.title }}
+                        </a>
+                        
+                        <p class="text-secondary fs-14 mb-3 flex-grow-1">
+                            {{ blog.excerpt }}
+                        </p>
+
+                        <div class="d-flex flex-wrap gap-1 mb-3">
+                            <span *ngFor="let t of blog.tags" class="tech-tag">
+                                {{ t }}
+                            </span>
+                        </div>
+
+                        <div class="border-top border-subtle pt-3 d-flex justify-content-between align-items-center mt-auto">
+                            <div class="d-flex align-items-center">
+                                <img [src]="personal.profileImage" alt="Sourabh Suman" class="thumb-xs rounded-circle me-2">
+                                <span class="fs-13 text-secondary fw-medium">{{ blog.author }}</span>
+                            </div>
+                            <a routerLink="/blog-detail" class="fs-13 text-primary fw-semibold d-flex align-items-center">
+                                Read Article <i class="ti ti-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div><!--end card-body-->
+                </div><!--end card-->
+            </div><!--end col-->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
+<!-- end blogs -->

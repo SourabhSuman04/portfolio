@@ -1,0 +1,113 @@
+<!-- start hero -->
+<section class="hero-one position-relative" id="resume-hero">
+    <div class="container position-relative z-i-2">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-8 text-center">
+                <span class="badge badge-soft-cyan mb-3">Qualifications & Career</span>
+                <h1 class="hero-title text-white">Experience & Credentials</h1>
+                <p class="hero-subtitle mb-4">
+                    Full Stack Developer specializing in .NET Core, Angular, Java, and SQL Server.
+                </p>
+                <div>
+                    <a [href]="personal.resumeUrl" [download]="personal.resumeUrl" class="btn btn-primary px-4 py-2">
+                        <i class="ti ti-download me-1"></i> Download ATS Resume (PDF)
+                    </a>
+                </div>
+            </div><!--end col-->                  
+        </div><!--end row-->             
+    </div><!-- end container -->
+</section>
+<!-- end hero -->
+
+<!-- start resume -->
+<section class="section bg-light" id="resume">
+    <div class="container position-relative z-i-2">                
+        <!-- Experience Section -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="d-flex align-items-center mb-4 pb-2 border-bottom border-subtle">
+                    <div class="bg-soft-alt-primary thumb-md rounded d-flex align-items-center justify-content-center me-3">
+                        <i class="las la-briefcase text-primary fs-22"></i>
+                    </div>
+                    <h4 class="text-white fw-bold mb-0">Professional Experience</h4>
+                </div>
+
+                <div class="accordion accordion-flush" id="resumeExpAccordion">
+                    <div class="accordion-item" *ngFor="let exp of experiences; let idx = index">
+                        <h2 class="accordion-header" [id]="'rExpHead' + idx">
+                            <button class="accordion-button" [class.collapsed]="activeExp !== idx" type="button" (click)="toggleExp(idx)">
+                                <div>
+                                    <span class="fw-bold fs-17 text-white d-block">{{ exp.role }}</span>
+                                    <span class="text-muted fs-14">{{ exp.company }} &bull; {{ exp.location }}</span>
+                                </div>
+                                <span class="fw-medium text-primary ms-auto fs-13 px-3 py-1 rounded bg-soft-alt-primary">{{ exp.duration }}</span>
+                            </button>
+                        </h2>
+                        <div [id]="'rExpCollapse' + idx" class="accordion-collapse collapse" [class.show]="activeExp === idx">
+                            <div class="accordion-body">
+                                <div class="mb-3 d-flex flex-wrap gap-1">
+                                    <span *ngFor="let tech of exp.technologies" class="badge bg-soft-alt-info text-info fw-normal fs-12">
+                                        {{ tech }}
+                                    </span>
+                                </div>
+                                <ul class="text-secondary ps-3 mb-0 fs-14">
+                                    <li *ngFor="let resp of exp.responsibilities" class="mb-2">
+                                        {{ resp }}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!--end accordion-item-->
+                </div><!--end accordion-->
+            </div>
+        </div>
+
+        <!-- Education & Certification Section -->
+        <div class="row g-4">
+            <div class="col-lg-7">
+                <div class="d-flex align-items-center mb-4 pb-2 border-bottom border-subtle">
+                    <div class="bg-soft-alt-primary thumb-md rounded d-flex align-items-center justify-content-center me-3">
+                        <i class="las la-graduation-cap text-primary fs-22"></i>
+                    </div>
+                    <h4 class="text-white fw-bold mb-0">Academic Background</h4>
+                </div>
+
+                <div class="card p-4 rounded border-0">
+                    <div class="border-start border-subtle ps-3 ms-2">
+                        <div class="mb-4 position-relative" *ngFor="let edu of educationList">
+                            <div class="d-flex justify-content-between align-items-baseline">
+                                <h5 class="text-white fw-bold fs-16 mb-1">{{ edu.degree }}</h5>
+                                <span class="badge bg-soft-alt-success text-success fs-13">{{ edu.score }}</span>
+                            </div>
+                            <p class="text-muted fs-14 mb-1">{{ edu.institution }}</p>
+                            <span class="text-primary fs-13 fw-medium"><i class="ti ti-calendar me-1"></i>{{ edu.year }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="d-flex align-items-center mb-4 pb-2 border-bottom border-subtle">
+                    <div class="bg-soft-alt-warning thumb-md rounded d-flex align-items-center justify-content-center me-3">
+                        <i class="las la-certificate text-warning fs-22"></i>
+                    </div>
+                    <h4 class="text-white fw-bold mb-0">Verified Certifications</h4>
+                </div>
+
+                <div class="card p-4 rounded border-0">
+                    <div class="card-bg p-4 rounded border border-subtle">
+                        <span class="badge bg-soft-alt-warning text-warning fs-12 text-uppercase mb-2" style="width: fit-content;">{{ certification.platform }}</span>
+                        <h5 class="text-white fw-bold mb-2">{{ certification.title }}</h5>
+                        <p class="text-secondary fs-14 mb-4">
+                            Comprehensive certification covering core object-oriented Java concepts, networking fundamentals, sockets, threads, and application architectures.
+                        </p>
+                        <a [href]="certification.url" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm w-100">
+                            <i class="ti ti-external-link me-1"></i> View Verified Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end container -->
+</section>
+<!-- end resume -->

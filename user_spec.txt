@@ -1,0 +1,250 @@
+<USER_REQUEST>
+ANTIGRAVITY PROMPT – COMPLETE MY DEVELOPER PORTFOLIO
+Act as a senior Angular developer, UI/UX designer, and professional portfolio content specialist.
+I already have an Angular portfolio template. Your task is to thoroughly inspect the existing project and fill the entire template with my complete professional information, work experience, technical skills, projects, education, and contact details.
+IMPORTANT: Do not create a completely new website. Work inside my existing Angular project and use its current template, components, layout, and design system.
+1. My Personal Information
+Name: Sourabh Suman
+Professional Title: Full Stack Developer
+Location: Kota, Rajasthan, India
+Email: [sourabhsuman014@gmail.com](mailto:sourabhsuman014@gmail.com)
+Phone: +91-7073672213
+LinkedIn: [https://linkedin.com/in/sourabh-suman04](https://linkedin.com/in/sourabh-suman04)
+GitHub: Find the actual GitHub profile from the existing project configuration or ask me if it is unavailable. Never invent a GitHub URL.
+2. Professional Introduction
+Use this information to create an attractive, humanized introduction:
+"I am a Full Stack Developer with hands-on experience developing scalable web applications, REST APIs, database-driven systems, and enterprise business solutions.
+I specialize in backend development using ASP.NET Core Web API, .NET 8, Dapper, Entity Framework Core, and SQL Server, along with frontend development using Angular, TypeScript, JavaScript, HTML, CSS, and Tailwind CSS.
+I have contributed to real-world applications in microfinance, insurance claim management, document automation, and human resource management.
+My experience includes developing RESTful APIs, optimizing SQL queries and stored procedures, integrating payment services, implementing role-based access control, automating PDF and Excel processing, and integrating AWS S3.
+I enjoy solving complex technical problems, improving application performance, and building reliable software solutions."
+Create a concise and impactful hero section.
+Suggested hero heading:
+"Building Scalable Applications. Solving Real-World Problems."
+Subtitle:
+"Full Stack Developer specializing in .NET Core, Angular, Java, and SQL Server."
+Add these buttons:
+View My Projects
+Download Resume
+Contact Me
+3. Professional Experience
+Software Developer
+Company: Kamal Fincap Pvt. Ltd.
+Location: Kota, Rajasthan
+Duration: April 2025 – Present
+Responsibilities and achievements:
+Developed RESTful APIs using ASP.NET Core Web API, Dapper, and Entity Framework Core.
+Built reusable Angular components, services, forms, dashboards, and reporting modules.
+Designed and optimized SQL Server stored procedures, complex joins, temporary tables, and table-valued parameters.
+Integrated payment gateways, payment links, QR code generation, transaction verification, and payment status handling.
+Implemented AWS S3 document storage and retrieval.
+Developed automated PDF generation, document stamping, Excel imports, and report exports.
+Implemented role-based access control, user session management, and security features.
+Integrated SignalR and WebRTC for real-time communication.
+Troubleshot application issues and delivered new business requirements across frontend, backend, and database layers.
+Java Full Stack Developer Intern
+Organization: SKIT, Jaipur
+Duration: July 2023 – July 2024
+Responsibilities:
+Learned and practiced Java full-stack development.
+Worked on Java programming and web development concepts.
+Practiced database connectivity and application logic.
+Gained experience with frontend/backend integration and problem-solving.
+Display experience in a clean professional timeline.
+4. Featured Projects
+Create separate, visually attractive project cards and detailed project descriptions for all four projects.
+PROJECT 1: FieldMatePlus
+Category: Microfinance and Collection Management Platform
+Description:
+An enterprise application designed to manage microfinance operations, loan collections, field activities, payment processing, reporting, and branch operations.
+My Contributions:
+Developed payment link generation and QR code integration.
+Implemented payment verification and transaction status handling.
+Developed collection correction, reversal, transfer, and management functionality.
+Worked on Cashbook, Branch Closing, OD/NPA, Fuel, Write-off, and Collection reports.
+Implemented multi-sheet Excel uploads and template generation.
+Integrated AWS S3 for document storage.
+Implemented role-based access control, device binding, and session revocation.
+Worked on GPS-based field visits and road-distance reporting using Mappls API.
+Improved reporting and SQL stored procedure performance.
+Technology Stack:
+.NET 8, ASP.NET Core Web API, Angular 19, SQL Server, Dapper, Entity Framework Core, AWS S3, QuestPDF, Mappls API.
+PROJECT 2: EnsureWeb
+Category: Insurance Claim Management Platform
+Description:
+An insurance claim management application supporting death claims, hospitalization claims, documentation, verification, and claim processing workflows.
+My Contributions:
+Developed death claim and hospitalization case management functionality.
+Implemented claim forms and document upload workflows.
+Developed document verification and discrepancy management.
+Implemented Excel data imports using ClosedXML.
+Developed SQL Server stored procedures and table-valued parameter operations.
+Integrated AWS S3 for document storage.
+Implemented image compression and processing using ImageSharp.
+Developed Angular master screens and claim management interfaces.
+Technology Stack:
+.NET Core 8, Angular 20, SQL Server, Dapper, ClosedXML, AWS S3, ImageSharp.
+PROJECT 3: DocuMatePlus
+Category: Loan Document Automation Platform
+Description:
+A loan document management and automation platform designed to simplify loan application processing, document generation, verification, and underwriting workflows.
+My Contributions:
+Developed multi-stage Loan Against Property (LAP) application workflows.
+Implemented automated PDF generation and coordinate-based PDF stamping using iText7.
+Developed automated ZIP docket generation.
+Implemented underwriting maker-checker remarks and approval workflows.
+Worked on IBL onboarding and household hierarchy management.
+Developed notices and Lok Adalat document workflows.
+Integrated AWS S3 for document storage.
+Implemented image processing and compression using ImageSharp.
+Integrated SignalR and WebRTC for real-time communication and remote house verification.
+Technology Stack:
+.NET 8, ASP.NET Core Web API, Angular 19/20, SQL Server, Dapper, Entity Framework Core, AWS S3, iText7, SignalR, WebRTC.
+PROJECT 4: SkillUP HRMS
+Category: Human Resource Management and Learning Platform
+Description:
+An employee lifecycle and learning management application supporting onboarding, employee records, document generation, attendance, and HR operations.
+My Contributions:
+Developed multi-step employee onboarding workflows.
+Implemented dynamic letter generation using TinyMCE and configurable placeholders.
+Developed PDF generation, digital signatures, and ZIP document processing.
+Implemented employee attendance and dashboard functionality.
+Worked on resignation and Full & Final settlement workflows.
+Implemented bulk employee imports using EPPlus.
+Developed role-based access control and notification functionality.
+Integrated AWS S3 for document storage.
+Technology Stack:
+.NET 8, Angular 19, SQL Server, Dapper, Entity Framework Core, AWS S3, TinyMCE, EPPlus, iText7.
+5. Additional Projects
+Add a smaller section named "Other Technical Projects".
+Include:
+Online Examination Platform Migration
+Migrated an existing Java EE application to Spring Boot and Angular.
+TMDB Movie Application
+Developed a movie discovery application using Angular, Tailwind CSS, and TMDB API.
+WebRTC Video Chat Application
+Implemented real-time video communication using Angular, .NET Core, and SignalR.
+Animated Video Generation
+Experimented with video-to-animation processing using ComfyUI, Stable Diffusion, and video processing tools.
+Collection Analytics Dashboard
+Developed reporting and aggregation functionality using SQL Server and dynamic filters.
+6. Technical Skills
+Organize skills into attractive categories with icons or technology logos.
+Backend:
+C#
+.NET 8
+ASP.NET Core Web API
+Java
+Spring Boot
+REST API Development
+Dapper
+Entity Framework Core
+ADO.NET
+LINQ
+Frontend:
+Angular 19/20
+TypeScript
+JavaScript
+React
+HTML5
+CSS3
+Tailwind CSS
+Bootstrap
+Angular Material
+Database:
+Microsoft SQL Server
+MySQL
+Stored Procedures
+Views
+Joins
+Temporary Tables
+Table-Valued Parameters
+Query Optimization
+Dynamic SQL
+Cloud and Integrations:
+AWS S3
+SignalR
+WebRTC
+Payment Gateway Integration
+QR Code Integration
+Firebase
+Zoom API
+Mappls API
+Libraries and Tools:
+iText7
+QuestPDF
+EPPlus
+ClosedXML
+ImageSharp
+TinyMCE
+Git
+GitHub
+Postman
+Swagger
+Visual Studio
+VS Code
+SQL Server Management Studio
+Do not display fake skill percentages. Use technology badges, icons, or categorized skill cards instead.
+7. Education
+Bachelor of Computer Applications (BCA)
+University of Rajasthan, Jaipur
+Graduation Year: 2024
+Percentage: 68%
+Higher Secondary Education (12th)
+Shier Jyoti Sah Sec School, Kota
+Year: 2021
+Percentage: 90%
+Secondary Education (10th)
+Year: 2019
+Percentage: 72%
+Display education in a clean timeline or education cards.
+8. Certification
+Certification: Programming, Networking in Java
+Platform: Udemy
+Certificate URL:
+[https://drive.google.com/file/d/1PrisPd4_7Y4jmcUECGt5FKXKLFPMtUZq/view?usp=drive_link](https://drive.google.com/file/d/1PrisPd4_7Y4jmcUECGt5FKXKLFPMtUZq/view?usp=drive_link)
+Add a button to view the certificate.
+9. Contact Section
+Heading:
+"Let's Build Something Great Together."
+Description:
+"I am always interested in connecting with developers, recruiters, and technology professionals. If you have an exciting opportunity, a challenging project, or an idea to discuss, feel free to reach out."
+Display:
+Email
+Phone
+LinkedIn
+GitHub (only after confirming the real URL)
+Location
+Add a functional contact form with:
+Name
+Email
+Subject
+Message
+Send Message button
+If no backend exists, clearly indicate that the form needs an email service integration. Do not show a fake successful submission.
+10. Resume Integration
+Use my existing ATS-friendly resume PDF if it exists in the project or workspace.
+Expected filename:
+Sourabh_Suman_ATS_Resume.pdf
+Add a functional Download Resume button.
+If the PDF is not available, create a placeholder configuration and tell me where to place it.
+Do not generate a fake resume download link.
+
+don't change in this 
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-10-31T13:35:33+05:30.
+
+The user's current state is as follows:
+Active Document: d:\Projects\Repo\FieldMatePlus_Admin\fieldmateplus_admin\src\app\pages\auth\forgot-password\forgot-password.component.html (LANGUAGE_HTML)
+Cursor is on line: 206
+Other open documents:
+- d:\Projects\Repo\FieldMatePlus_Admin\fieldmateplus_admin\src\app\services\forgot-password.service.ts (LANGUAGE_TYPESCRIPT)
+- d:\Projects\Repo\FieldMatePlus_Admin\fieldmateplus_admin\src\environments\environments.ts (LANGUAGE_TYPESCRIPT)
+- d:\Projects\Repo\FieldMatePlus_Admin\fieldmateplus_admin\src\app\pages\auth\forgot-password\forgot-password.component.html (LANGUAGE_HTML)
+- d:\Projects\Repo\FieldMatePlus_Admin\fieldmateplus_admin\src\app\pages\auth\login\login.component.html (LANGUAGE_HTML)
+- d:\Projects\Repo\FieldMatePlus_Admin\fieldmateplus_admin\src\app\pages\auth\login\login.component.ts (LANGUAGE_TYPESCRIPT)
+Browser State:
+  Page BC2ECB67B7413021DEB2874B643F8545 (Selfown - Responsive Personal page) - http://localhost:4200/ [ACTIVE]
+    Viewport: 1920x945, Page Height: 7311
+</ADDITIONAL_METADATA>

@@ -1,29 +1,4 @@
-<app-three-scene class="background-scene"></app-three-scene>
-<app-header></app-header>
-
-<div class="scroll-container" #scrollContainer>
-  <div class="section hero-section" id="home">
-    <app-hero></app-hero>
-  </div>
-  <div class="section" id="about">
-    <app-about></app-about>
-  </div>
-  <div class="section" id="experience">
-    <app-experience></app-experience>
-  </div>
-  <div class="section" id="projects">
-    <app-projects></app-projects>
-  </div>
-  <div class="section" id="skills">
-    <app-skills></app-skills>
-  </div>
-  <div class="section" id="education">
-    <app-education></app-education>
-  </div>
-  <div class="section" id="contact">
-    <app-contact></app-contact>
-  </div>
-</div>
-<!-- <footer>
-  <p>&copy; 2025 Portfolio. Built with Angular & Three.js</p>
-</footer> -->
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+<app-style-switcher></app-style-switcher>

@@ -1,0 +1,64 @@
+<!-- start hero -->
+<section class="hero-one position-relative" id="services-hero">
+    <div class="container position-relative z-i-2">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-8 text-center">
+                <span class="badge badge-soft-cyan mb-3">Technical Solutions</span>
+                <h1 class="hero-title text-white">Full Stack Engineering Capabilities</h1>
+                <p class="hero-subtitle">
+                    Production-grade software architectures across backend services, dynamic SPAs, database optimizations, and cloud workflows.
+                </p>
+            </div><!--end col-->                  
+        </div><!--end row-->             
+    </div><!-- end container -->
+</section>
+<!-- end hero -->
+
+<!-- start services -->
+<section class="section bg-light" id="services">
+    <div class="container position-relative z-i-2">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" *ngFor="let s of services">
+                <div class="card rounded p-4 border-0 h-100 d-flex flex-column">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-soft-alt-primary thumb-lg rounded d-flex align-items-center justify-content-center me-3">
+                            <i [class]="'las ' + s.icon + ' text-primary fs-26'"></i>  
+                        </div>
+                        <h5 class="text-white fs-18 fw-bold mb-0">{{ s.title }}</h5>
+                    </div>
+                    
+                    <p class="text-secondary fs-14 mb-4 flex-grow-1">{{ s.description }}</p>
+                    
+                    <div class="border-top border-subtle pt-3 mt-auto">
+                        <span class="text-muted fs-12 fw-semibold d-block mb-2 text-uppercase">Tech Stack:</span>
+                        <div class="d-flex flex-wrap gap-1">
+                            <span *ngFor="let tech of s.skills" class="tech-tag">
+                                {{ tech }}
+                            </span>
+                        </div>
+                    </div>
+                </div><!-- end card -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <div class="card p-4 p-md-5 rounded border-0 text-center">
+                    <h3 class="text-white fw-bold mb-2">Have a Custom Technical Requirement?</h3>
+                    <p class="text-secondary fs-16 mb-4 max-w-600 mx-auto">
+                        Whether you need scalable REST API backends, reactive Angular applications, or high-throughput SQL Server optimization, let's connect.
+                    </p>
+                    <div>
+                        <a routerLink="/contact" class="btn btn-primary px-4 py-2 me-2">
+                            <i class="ti ti-mail me-1"></i> Discuss Your Project
+                        </a>
+                        <a [href]="personal.resumeUrl" [download]="personal.resumeUrl" class="btn btn-outline-primary px-4 py-2">
+                            <i class="ti ti-download me-1"></i> View Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end container -->
+</section>
+<!-- end services -->

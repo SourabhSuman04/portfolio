@@ -1,0 +1,74 @@
+<!-- start hero -->
+<section class="hero-one position-relative" id="blog-detail-hero">
+    <div class="container position-relative z-i-2">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-9 text-center">
+                <span class="badge badge-soft-cyan mb-3">Technical Article</span>
+                <h1 class="hero-title text-white fs-36">{{ post.title }}</h1>
+                <div class="d-flex justify-content-center align-items-center gap-3 text-muted fs-14 mt-3">
+                    <span><i class="ti ti-calendar me-1"></i>{{ post.date }}</span>
+                    <span>&bull;</span>
+                    <span><i class="ti ti-clock me-1"></i>{{ post.readTime }}</span>
+                    <span>&bull;</span>
+                    <span><i class="ti ti-user me-1"></i>{{ post.author }}</span>
+                </div>
+            </div><!--end col-->                  
+        </div><!--end row-->             
+    </div><!-- end container -->
+</section>
+<!-- end hero -->
+
+<!-- start blog detail content -->
+<section class="section bg-light" id="blog-detail-content">
+    <div class="container position-relative z-i-2">     
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-9">
+                <div class="card border-0 p-4 p-md-5">
+                    <div class="mb-4">
+                        <img [src]="post.image" [alt]="post.title" class="img-fluid rounded w-100" style="max-height: 400px; object-fit: cover;">
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <span *ngFor="let t of post.tags" class="tech-tag">
+                            {{ t }}
+                        </span>
+                    </div>
+
+                    <div class="text-secondary fs-16 lh-lg">
+                        <p class="fs-18 text-white fw-medium mb-4">
+                            {{ post.excerpt }}
+                        </p>
+
+                        <p *ngFor="let paragraph of post.content" class="mb-4">
+                            {{ paragraph }}
+                        </p>
+
+                        <div class="card-bg p-4 rounded border border-subtle my-4">
+                            <h5 class="text-white fw-bold mb-2"><i class="las la-lightbulb text-warning me-2"></i>Key Architectural Takeaway:</h5>
+                            <p class="text-secondary fs-14 m-0">
+                                In enterprise production workloads with thousands of daily loan transactions, avoiding ORM row-by-row iteration and replacing it with SQL Server Table-Valued Parameters paired with Dapper enables near native engine speeds and zero transaction timeouts.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border-top border-subtle pt-4 mt-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
+                        <div class="d-flex align-items-center">
+                            <img [src]="personal.profileImage" alt="Sourabh Suman" class="thumb-md rounded-circle me-3">
+                            <div>
+                                <h6 class="text-white fw-bold m-0">{{ personal.name }}</h6>
+                                <span class="text-muted fs-12">{{ personal.title }} @ Kamal Fincap</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <a routerLink="/blogs" class="btn btn-outline-primary btn-sm">
+                                <i class="ti ti-arrow-left me-1"></i> Back to All Articles
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end container -->
+</section>
+<!-- end blog detail -->

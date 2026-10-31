@@ -1,59 +1,44 @@
-import { Component, ElementRef, ViewChild, AfterViewInit, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { StyleSwitcherComponent } from './components/style-switcher/style-switcher.component';
 
-import { HeaderComponent } from './components/header/header';
-import { HeroComponent } from './components/hero/hero';
-import { AboutComponent } from './components/about/about';
-import { ExperienceComponent } from './components/experience/experience.component';
-import { ProjectsComponent } from './components/projects/projects';
-import { SkillsComponent } from './components/skills/skills.component';
-import { EducationComponent } from './components/education/education.component';
-import { ContactComponent } from './components/contact/contact';
-import { ThreeSceneComponent } from './components/three-scene/three-scene';
-
-gsap.registerPlugin(ScrollTrigger);
+declare var feather: any;
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     CommonModule,
-    HeaderComponent,
-    HeroComponent,
-    AboutComponent,
-    ExperienceComponent,
-    ProjectsComponent,
-    SkillsComponent,
-    EducationComponent,
-    ContactComponent,
-    ThreeSceneComponent
+    RouterOutlet,
+    NavbarComponent,
+    FooterComponent,
+    StyleSwitcherComponent
   ],
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
 })
 export class AppComponent implements AfterViewInit {
-  @ViewChild('scrollContainer') scrollContainer!: ElementRef;
+  constructor(private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+          if (typeof feather !== 'undefined') {
+            feather.replace();
+          }
+        }, 100);
+      }
+    });
+  }
 
   ngAfterViewInit() {
-    const sections = gsap.utils.toArray('.section');
-
-    sections.forEach((section: any) => {
-      gsap.fromTo(section,
-        { autoAlpha: 0, y: 50 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 80%',
-            end: 'top 20%',
-            toggleActions: 'play none none reverse'
-          }
-        }
-      );
-    });
+    setTimeout(() => {
+      if (typeof feather !== 'undefined') {
+        feather.replace();
+      }
+    }, 100);
   }
 }

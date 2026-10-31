@@ -1,0 +1,91 @@
+<!-- start hero -->
+<section class="hero-one position-relative" id="about-hero">
+    <div class="container position-relative z-i-2">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-8 text-center">
+                <span class="badge badge-soft-cyan mb-3">About Me</span>
+                <h1 class="hero-title text-white">Engineering Resilient Software</h1>
+                <p class="hero-subtitle">
+                    Full Stack Developer specializing in .NET Core, Angular, Java, and SQL Server.
+                </p>
+            </div><!--end col-->                  
+        </div><!--end row-->             
+    </div><!-- end container -->
+</section>
+<!-- end hero -->
+
+<!-- start about -->
+<section class="section" id="about">
+    <div class="container position-relative z-i-2">
+        <div class="row align-items-center">                
+            <div class="col-lg-5 text-center mb-5 mb-lg-0">
+                <div class="hero-profile-container">
+                    <div class="hero-profile-glow"></div>
+                    <img [src]="personal.profileImage" alt="Sourabh Suman" class="img-fluid hero-profile-img">
+                    <div class="hero-status-badge">
+                        <span class="status-dot"></span>
+                        <span>Full Stack Developer</span>
+                    </div>
+                </div>
+            </div><!--end col--> 
+
+            <div class="col-lg-7 ps-lg-5">
+                <span class="badge badge-soft-cyan mb-2">Detailed Profile</span>
+                <h2 class="fs-2 text-white fw-bold mb-3">Professional Background</h2>       
+                <p class="text-secondary lh-lg mb-4 fs-16" style="white-space: pre-line;">
+                    {{ personal.introduction }}
+                </p>
+                
+                <div class="card p-4 rounded border-0 mb-4">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <span class="personal-detail-title d-block mb-1">Full Name</span> 
+                            <span class="personal-detail-info">{{ personal.name }}</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <span class="personal-detail-title d-block mb-1">Designation</span> 
+                            <span class="personal-detail-info">{{ personal.title }}</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <span class="personal-detail-title d-block mb-1">Current Organization</span> 
+                            <span class="personal-detail-info">Kamal Fincap Pvt. Ltd.</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <span class="personal-detail-title d-block mb-1">Location</span> 
+                            <span class="personal-detail-info">{{ personal.location }}</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <span class="personal-detail-title d-block mb-1">Email</span> 
+                            <span class="personal-detail-info"><a [href]="'mailto:' + personal.email">{{ personal.email }}</a></span>
+                        </div>
+                        <div class="col-sm-6">
+                            <span class="personal-detail-title d-block mb-1">Phone</span> 
+                            <span class="personal-detail-info"><a [href]="'tel:' + personal.phone">{{ personal.phone }}</a></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-wrap align-items-center gap-3">
+                    <div class="social">
+                        <a [href]="personal.github" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="Sourabh Suman GitHub">
+                            <i class="lab la-github"></i>
+                        </a>
+                        <a [href]="personal.linkedin" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="Sourabh Suman LinkedIn">
+                            <i class="lab la-linkedin-in"></i>
+                        </a>
+                        <a [href]="'mailto:' + personal.email" title="Email" aria-label="Sourabh Suman Email">
+                            <i class="ti ti-mail"></i>
+                        </a>
+                        <a [href]="'tel:' + personal.phone" title="Phone" aria-label="Sourabh Suman Phone">
+                            <i class="ti ti-phone"></i>
+                        </a>
+                    </div>
+                    <a [href]="personal.resumeUrl" [download]="personal.resumeUrl" class="btn btn-primary">
+                        <i class="ti ti-download me-1"></i> Download ATS Resume (PDF)
+                    </a>
+                </div>
+            </div><!--end col--> 
+        </div><!--end row--> 
+    </div><!-- end container -->
+</section>
+<!-- end about -->

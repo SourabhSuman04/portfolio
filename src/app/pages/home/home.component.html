@@ -1,0 +1,665 @@
+<!-- start hero -->
+<section class="hero-one position-relative" id="home">
+    <div class="container position-relative z-i-2">
+        <div class="row align-items-center justify-content-center">
+
+            <div class="col-lg-5 text-center order-lg-2 mb-4 mb-lg-0">
+                <div class="hero-profile-container">
+                    <div class="hero-profile-glow"></div>
+                    <img [src]="personal.profileImage" alt="Sourabh Suman - Full Stack Developer"
+                        class="img-fluid hero-profile-img">
+                    <div class="hero-status-badge">
+                        <span class="status-dot"></span>
+                        <span>Available for Opportunities</span>
+                    </div>
+                </div>
+            </div><!--end col-->
+
+            <div class="col-lg-7 text-center text-lg-start order-lg-1 pe-lg-4">
+                <div class="hero-greeting-pill">
+                    <i class="ti ti-code"></i> Hi, I'm {{ personal.name }}
+                </div>
+
+                <h1 class="hero-title">
+                    Building Scalable Applications.<br>
+                    <span class="text-primary">Solving Real-World Problems.</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    {{ personal.heroSubtitle }}
+                </p>
+
+                <div class="mb-4">
+                    <div class="hero-typewriter-box">
+                        <span class="text-muted me-2">&gt;</span>Specializing in <mark><span class="typewrite">{{
+                                typewriterText }}<span class="wrap"></span></span></mark>
+                    </div>
+                </div>
+
+                <div class="hero-cta-group d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 pt-2">
+                    <a (click)="scrollTo('projects')" style="cursor: pointer;"
+                        class="btn btn-outline-primary px-4 py-2">
+                        <i class="ti ti-layout-grid me-1"></i> View My Projects
+                    </a>
+                    <a [href]="personal.resumeUrl" [download]="personal.resumeUrl" class="btn btn-primary px-4 py-2">
+                        <i class="ti ti-download me-1"></i> Download ATS Resume
+                    </a>
+                    <a (click)="scrollTo('contact')" style="cursor: pointer;" class="btn btn-dark px-4 py-2">
+                        <i class="ti ti-send me-1"></i> Contact Me
+                    </a>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!-- end container -->
+</section>
+<!-- end hero -->
+
+<!-- start about / professional introduction -->
+<section class="section" id="about">
+    <div class="container position-relative z-i-2">
+        <div class="row align-items-center">
+            <div class="col-lg-7 align-self-center">
+                <span class="badge badge-soft-cyan mb-3">Professional Overview</span>
+                <h2 class="fs-2 fw-bold text-white mb-3">Architecting Enterprise Solutions</h2>
+                <p class="text-secondary lh-lg mb-4 fs-16" style="white-space: pre-line;">
+                    {{ personal.introduction }}
+                </p>
+                <div class="social mt-4">
+                    <a [href]="personal.github" target="_blank" rel="noopener noreferrer" title="GitHub" class="me-2"
+                        aria-label="Sourabh Suman GitHub Profile">
+                        <i class="lab la-github"></i>
+                    </a>
+                    <a [href]="personal.linkedin" target="_blank" rel="noopener noreferrer" title="LinkedIn"
+                        class="me-2" aria-label="Sourabh Suman LinkedIn Profile">
+                        <i class="lab la-linkedin-in"></i>
+                    </a>
+                    <a [href]="'mailto:' + personal.email" title="Email" class="me-2"
+                        aria-label="Send email to Sourabh Suman">
+                        <i class="ti ti-mail"></i>
+                    </a>
+                    <a [href]="'tel:' + personal.phone" title="Phone" class="me-2" aria-label="Call Sourabh Suman">
+                        <i class="ti ti-phone"></i>
+                    </a>
+                </div>
+            </div><!--end col-->
+
+            <div class="col-lg-5 ms-auto align-self-center mt-5 mt-lg-0">
+                <div class="card p-4 rounded shadow-sm border-0">
+                    <div
+                        class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom border-subtle">
+                        <h5 class="text-white fw-bold m-0"><i class="ti ti-user-check text-primary me-2"></i>Quick Facts
+                        </h5>
+                        <span class="badge bg-soft-alt-primary">Verified</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <span class="personal-detail-title">Full Name</span>
+                        <span class="personal-detail-info">{{ personal.name }}</span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="personal-detail-title">Designation</span>
+                        <span class="personal-detail-info">{{ personal.title }}</span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="personal-detail-title">Current Role</span>
+                        <span class="personal-detail-info">Software Developer @ Kamal Fincap</span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="personal-detail-title">Location</span>
+                        <span class="personal-detail-info">{{ personal.location }}</span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="personal-detail-title">Email</span>
+                        <span class="personal-detail-info"><a [href]="'mailto:' + personal.email">{{ personal.email
+                                }}</a></span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="personal-detail-title">Phone</span>
+                        <span class="personal-detail-info"><a [href]="'tel:' + personal.phone">{{ personal.phone
+                                }}</a></span>
+                    </div>
+
+                    <div class="mt-3 pt-3 border-top border-subtle">
+                        <a [href]="personal.resumeUrl" [download]="personal.resumeUrl"
+                            class="btn btn-sm btn-primary w-100">
+                            <i class="ti ti-file-download me-1"></i> Download ATS Resume (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div><!--end col-->
+
+            <!-- Core Specializations -->
+            <div class="col-12 mt-5">
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <div class="card-bg p-3 shadow-sm d-flex align-items-center">
+                        <div
+                            class="thumb-md d-flex justify-content-center align-items-center bg-soft-alt-primary rounded me-3">
+                            <span class="fw-bold text-primary">.NET</span>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-semibold text-white">.NET 8 & Web API</h6>
+                            <p class="text-muted mb-0 fs-12">Backend & Microservices</p>
+                        </div>
+                    </div>
+
+                    <div class="card-bg p-3 shadow-sm d-flex align-items-center">
+                        <div class="thumb-md d-flex justify-content-center align-items-center me-3">
+                            <img src="images/logos/Angular.svg" alt="Angular" height="32">
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-semibold text-white">Angular 19/20</h6>
+                            <p class="text-muted mb-0 fs-12">Modern SPAs & RxJS</p>
+                        </div>
+                    </div>
+
+                    <div class="card-bg p-3 shadow-sm d-flex align-items-center">
+                        <div
+                            class="thumb-md d-flex justify-content-center align-items-center bg-soft-alt-info rounded me-3">
+                            <i class="las la-database text-info fs-24"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-semibold text-white">SQL Server</h6>
+                            <p class="text-muted mb-0 fs-12">Stored Procs & TVPs</p>
+                        </div>
+                    </div>
+
+                    <div class="card-bg p-3 shadow-sm d-flex align-items-center">
+                        <div
+                            class="thumb-md d-flex justify-content-center align-items-center bg-soft-alt-warning rounded me-3">
+                            <i class="las la-bolt text-warning fs-24"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-semibold text-white">Dapper & EF Core</h6>
+                            <p class="text-muted mb-0 fs-12">High-Throughput ORM</p>
+                        </div>
+                    </div>
+
+                    <div class="card-bg p-3 shadow-sm d-flex align-items-center">
+                        <div
+                            class="thumb-md d-flex justify-content-center align-items-center bg-soft-alt-success rounded me-3">
+                            <i class="las la-cloud text-success fs-24"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-semibold text-white">AWS S3 Cloud</h6>
+                            <p class="text-muted mb-0 fs-12">Storage & Processing</p>
+                        </div>
+                    </div>
+
+                    <div class="card-bg p-3 shadow-sm d-flex align-items-center">
+                        <div
+                            class="thumb-md d-flex justify-content-center align-items-center bg-soft-alt-orange rounded me-3">
+                            <i class="las la-video text-orange fs-24"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-semibold text-white">SignalR & WebRTC</h6>
+                            <p class="text-muted mb-0 fs-12">Real-Time Video/Hubs</p>
+                        </div>
+                    </div>
+                </div><!-- End div -->
+            </div><!-- End Col -->
+        </div><!--end row-->
+    </div><!-- end container -->
+</section>
+<!-- end about -->
+
+<!-- start technical skills -->
+<section class="section bg-light" id="skills">
+    <div class="container position-relative z-i-2">
+        <div class="row justify-content-center mb-4">
+            <div class="col-12 col-md-10 col-lg-7 text-center position-relative">
+                <span class="badge badge-soft-cyan mb-2">Technical Arsenal</span>
+                <h2 class="fs-2 fw-bold text-white my-3 position-relative z-i-2">Technical Skills & Expertise</h2>
+                <div class="bg-text">
+                    <h1>SKILLS</h1>
+                </div>
+                <p class="text-secondary fs-16 mb-4">
+                    Categorized proficiency based on production enterprise experience across backend, frontend,
+                    database, cloud, and developer tooling.
+                </p>
+            </div><!--end col-->
+        </div><!--end row-->
+
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" *ngFor="let cat of skillCategories">
+                <div class="card skill-card p-4 rounded border-0 h-100">
+                    <div class="d-flex align-items-center mb-3">
+                        <div
+                            class="bg-soft-alt-primary d-flex justify-content-center align-items-center thumb-md rounded me-3">
+                            <i [class]="'las ' + cat.icon + ' text-primary fs-22'"></i>
+                        </div>
+                        <h5 class="text-white fs-18 fw-bold mb-0">{{ cat.category }}</h5>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2 pt-2">
+                        <span *ngFor="let s of cat.skills" class="skill-pill">
+                            {{ s }}
+                        </span>
+                    </div>
+                </div><!-- end card -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
+<!-- end technical skills -->
+
+<!-- start professional experience -->
+<section class="section" id="experience">
+    <div class="container position-relative z-i-2">
+        <div class="row justify-content-center mb-4">
+            <div class="col-12 col-md-10 col-lg-7 text-center">
+                <span class="badge badge-soft-cyan mb-2">Track Record</span>
+                <h2 class="fs-2 fw-bold text-white my-3">Professional Experience</h2>
+                <p class="text-secondary fs-16 mb-4">
+                    Production software engineering across financial services, lending platforms, claim management, and
+                    enterprise architectures.
+                </p>
+            </div><!--end col-->
+        </div><!--end row-->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="row g-4 align-items-stretch">
+                    <div class="col-lg-4 col-md-5">
+                        <div
+                            class="card rounded h-100 border-0 p-4 d-flex flex-column justify-content-center text-center">
+                            <div class="mb-4">
+                                <div class="bg-soft-alt-primary d-inline-flex p-3 rounded-circle mb-3">
+                                    <i class="las la-briefcase text-primary fs-36"></i>
+                                </div>
+                                <h4 class="text-white fs-22 fw-bold mb-2">Industry Experience</h4>
+                                <p class="text-muted fs-14 mb-0">Production applications, high-throughput databases, and
+                                    cloud integrations</p>
+                            </div>
+
+                            <div class="border-top border-subtle pt-3 text-start">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="ti ti-check text-success me-2"></i>
+                                    <span class="text-secondary fs-13">Microfinance Operations</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="ti ti-check text-success me-2"></i>
+                                    <span class="text-secondary fs-13">Insurance Claim Processing</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="ti ti-check text-success me-2"></i>
+                                    <span class="text-secondary fs-13">Document Stamping Automation</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="ti ti-check text-success me-2"></i>
+                                    <span class="text-secondary fs-13">HRMS Lifecycle Automation</span>
+                                </div>
+                            </div>
+                        </div><!-- end card -->
+                    </div><!-- end col -->
+
+                    <div class="col-lg-8 col-md-7">
+                        <div class="accordion accordion-flush" id="experienceAccordion">
+                            <div class="accordion-item" *ngFor="let exp of experiences; let idx = index">
+                                <h2 class="accordion-header" [id]="'expHead' + idx">
+                                    <button class="accordion-button" [class.collapsed]="activeExp !== idx" type="button"
+                                        (click)="toggleExp(idx)">
+                                        <div>
+                                            <span class="fw-bold fs-17 text-white d-block">{{ exp.role }}</span>
+                                            <span class="text-muted fs-14">{{ exp.company }} &bull; {{ exp.location
+                                                }}</span>
+                                        </div>
+                                        <span
+                                            class="fw-medium text-primary ms-auto fs-13 px-3 py-1 rounded bg-soft-alt-primary">{{
+                                            exp.duration }}</span>
+                                    </button>
+                                </h2>
+                                <div [id]="'expCollapse' + idx" class="accordion-collapse collapse"
+                                    [class.show]="activeExp === idx">
+                                    <div class="accordion-body">
+                                        <div class="mb-3 d-flex flex-wrap gap-1">
+                                            <span *ngFor="let tech of exp.technologies"
+                                                class="badge bg-soft-alt-info text-info fw-normal fs-12">
+                                                {{ tech }}
+                                            </span>
+                                        </div>
+                                        <ul class="text-secondary ps-3 mb-0 fs-14">
+                                            <li *ngFor="let resp of exp.responsibilities" class="mb-2">
+                                                {{ resp }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!--end accordion-item-->
+                        </div><!--end accordion-->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
+<!-- end professional experience -->
+
+<!-- start featured projects -->
+<section class="section bg-light" id="projects">
+    <div class="container position-relative z-i-2">
+        <div class="row justify-content-center mb-4">
+            <div class="col-12 col-md-10 col-lg-7 text-center">
+                <span class="badge badge-soft-cyan mb-2">Featured Work</span>
+                <h2 class="fs-2 fw-bold text-white my-3">Enterprise Applications</h2>
+                <p class="text-secondary fs-16 mb-4">
+                    Production systems engineered in microfinance, insurance claim processing, document automation, and
+                    human resources.
+                </p>
+            </div><!--end col-->
+        </div><!--end row-->
+
+        <div class="row">
+            <div class="col-12 filters-group-wrap">
+                <ul class="filter-tab">
+                    <li [class.active]="selectedCategory === 'all'" (click)="setCategory('all')">All Featured</li>
+                    <li [class.active]="selectedCategory === 'microfinance'" (click)="setCategory('microfinance')">
+                        Microfinance</li>
+                    <li [class.active]="selectedCategory === 'insurance'" (click)="setCategory('insurance')">Insurance
+                    </li>
+                    <li [class.active]="selectedCategory === 'document automation'"
+                        (click)="setCategory('document automation')">Document Automation</li>
+                    <li [class.active]="selectedCategory === 'human resource'" (click)="setCategory('human resource')">
+                        HRMS</li>
+                </ul>
+            </div><!--end col-->
+        </div><!--end row-->
+
+        <div class="row g-4 justify-content-center" id="grid">
+            <div class="col-lg-6 picture-item" *ngFor="let proj of filteredProjects">
+                <div class="card project-card border-0 h-100">
+                    <div class="project-preview-wrap">
+                        <img [src]="proj.image" [alt]="proj.name + ' Mockup Preview'">
+                        <div class="project-preview-overlay"></div>
+                        <span class="project-cat-badge">{{ proj.category }}</span>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="d-flex align-items-center mb-2">
+                            <h4 class="text-white fs-20 fw-bold m-0">{{ proj.name }}</h4>
+                        </div>
+
+                        <p class="text-secondary fs-14 mb-3">{{ proj.description }}</p>
+
+                        <h6 class="text-white fs-13 fw-bold mb-2 text-uppercase tracking-wider">Key Contributions &
+                            Architecture:</h6>
+                        <ul class="contributions-list">
+                            <li *ngFor="let c of proj.contributions">
+                                {{ c }}
+                            </li>
+                        </ul>
+
+                        <div class="border-top border-subtle pt-3 mt-auto">
+                            <span class="fs-12 fw-bold text-muted d-block mb-2 text-uppercase">Technologies:</span>
+                            <div class="d-flex flex-wrap gap-1">
+                                <span *ngFor="let t of proj.techStack" class="tech-tag">
+                                    {{ t }}
+                                </span>
+                            </div>
+                        </div>
+                    </div><!-- end project-body -->
+                </div><!-- end card -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
+<!-- end featured projects -->
+
+<!-- start other technical projects -->
+<section class="section" id="other-projects">
+    <div class="container position-relative z-i-2">
+        <div class="row justify-content-center mb-4">
+            <div class="col-12 col-md-10 col-lg-7 text-center">
+                <span class="badge badge-soft-cyan mb-2">Explorations</span>
+                <h2 class="fs-2 fw-bold text-white my-3">Other Technical Projects</h2>
+                <p class="text-secondary fs-16 mb-4">
+                    Additional production migrations, real-time communication modules, and analytical dashboards.
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" *ngFor="let item of additionalProjects">
+                <div class="card rounded p-4 border-0 h-100 d-flex flex-column">
+                    <div class="d-flex align-items-center mb-3">
+                        <div
+                            class="bg-soft-alt-primary thumb-md rounded d-flex align-items-center justify-content-center me-3">
+                            <i [class]="'las ' + item.icon + ' text-primary fs-20'"></i>
+                        </div>
+                        <h5 class="text-white fs-17 fw-bold mb-0">{{ item.title }}</h5>
+                    </div>
+                    <p class="text-secondary fs-14 mb-3 flex-grow-1">{{ item.description }}</p>
+                    <div class="d-flex flex-wrap gap-1 mt-auto pt-2 border-top border-subtle">
+                        <span *ngFor="let t of item.tech" class="tech-tag">
+                            {{ t }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end other technical projects -->
+
+<!-- start education & certification -->
+<section class="section bg-light" id="education">
+    <div class="container position-relative z-i-2">
+        <div class="row justify-content-center mb-4">
+            <div class="col-12 col-md-10 col-lg-7 text-center">
+                <span class="badge badge-soft-cyan mb-2">Credentials</span>
+                <h2 class="fs-2 fw-bold text-white my-3">Education & Certification</h2>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Education Column -->
+            <div class="col-lg-7">
+                <div class="card rounded border-0 h-100 p-4">
+                    <div class="d-flex align-items-center mb-4">
+                        <div
+                            class="bg-soft-alt-primary thumb-lg rounded d-flex align-items-center justify-content-center me-3">
+                            <i class="las la-graduation-cap text-primary fs-26"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white fw-bold mb-0">Academic Background</h4>
+                            <p class="text-muted fs-14 mb-0">Formal computer applications and academic record</p>
+                        </div>
+                    </div>
+
+                    <div class="border-start border-subtle ps-3 ms-2">
+                        <div class="mb-4 position-relative" *ngFor="let edu of educationList">
+                            <div class="d-flex justify-content-between align-items-baseline">
+                                <h5 class="text-white fw-bold fs-16 mb-1">{{ edu.degree }}</h5>
+                                <span class="badge bg-soft-alt-success text-success fs-13">{{ edu.score }}</span>
+                            </div>
+                            <p class="text-muted fs-14 mb-1">{{ edu.institution }}</p>
+                            <span class="text-primary fs-13 fw-medium"><i class="ti ti-calendar me-1"></i>{{ edu.year
+                                }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certification Column -->
+            <div class="col-lg-5">
+                <div class="card rounded border-0 h-100 p-4">
+                    <div class="d-flex align-items-center mb-4">
+                        <div
+                            class="bg-soft-alt-warning thumb-lg rounded d-flex align-items-center justify-content-center me-3">
+                            <i class="las la-certificate text-warning fs-26"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white fw-bold mb-0">Verified Certification</h4>
+                            <p class="text-muted fs-14 mb-0">Accredited course completion</p>
+                        </div>
+                    </div>
+
+                    <div class="card-bg p-4 rounded border border-subtle">
+                        <span class="badge bg-soft-alt-warning text-warning fs-12 text-uppercase mb-2"
+                            style="width: fit-content;">{{ certification.platform }}</span>
+                        <h5 class="text-white fw-bold mb-2">{{ certification.title }}</h5>
+                        <p class="text-secondary fs-14 mb-4">
+                            Comprehensive certification covering core object-oriented Java concepts, networking
+                            fundamentals, sockets, threads, and application architectures.
+                        </p>
+                        <a [href]="certification.url" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-outline-primary btn-sm w-100">
+                            <i class="ti ti-external-link me-1"></i> View Verified Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end education & certification -->
+
+<!-- start contact us -->
+<section class="section" id="contact">
+    <div class="container position-relative z-i-2">
+        <div class="row">
+            <div class="col-12">
+                <div class="card border-0 p-4 p-md-5">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <span class="badge badge-soft-cyan mb-2">Get In Touch</span>
+                            <h2 class="fs-2 fw-bold text-white mb-3">Let's Build Something Great Together.</h2>
+                            <p class="text-secondary fs-16 mb-4">
+                                I am always interested in connecting with developers, engineering leaders, and
+                                recruiters. If you have an exciting full stack opportunity, a challenging project, or
+                                want to discuss technical architectures, feel free to reach out.
+                            </p>
+
+                            <form (submit)="$event.preventDefault(); submitContact()" name="contactForm">
+                                <div *ngIf="contactSuccess" class="alert alert-success py-3 mb-3 d-flex align-items-center">
+                                    <i class="ti ti-circle-check fs-24 me-2 text-success"></i>
+                                    <div>
+                                        <h6 class="text-white mb-1 fw-bold">Message Dispatched!</h6>
+                                        <p class="mb-0 fs-14 text-light">{{ contactSuccess }}</p>
+                                    </div>
+                                </div>
+
+                                <div *ngIf="contactError" class="alert alert-danger py-3 mb-3">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="ti ti-alert-triangle fs-22 me-2 text-danger"></i>
+                                        <div class="fs-14">{{ contactError }}</div>
+                                    </div>
+                                    <div *ngIf="mailToUrl" class="mt-2">
+                                        <a [href]="mailToUrl" class="btn btn-sm btn-primary">
+                                            <i class="ti ti-mail-forward me-1"></i> Send via Your Mail Client Instead
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label" for="name">Your Name <span class="text-danger">*</span></label>
+                                        <input type="text" [(ngModel)]="contactForm.name" name="name"
+                                            class="form-control" placeholder="Sourabh Suman" id="name" required />
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label" for="email">Your Email <span class="text-danger">*</span></label>
+                                        <input type="email" [(ngModel)]="contactForm.email" name="email"
+                                            class="form-control" placeholder="you@example.com" id="email" required />
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label class="form-label" for="subject">Subject <span class="text-danger">*</span></label>
+                                        <input type="text" [(ngModel)]="contactForm.subject" name="subject"
+                                            class="form-control" placeholder="Software Engineering Opportunity"
+                                            id="subject" required />
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label class="form-label" for="message">Message <span class="text-danger">*</span></label>
+                                        <textarea class="form-control" [(ngModel)]="contactForm.message" name="message"
+                                            id="message" placeholder="Hi Sourabh, we'd like to talk about..."
+                                            rows="4" required></textarea>
+                                    </div>
+                                    <div class="col-12 d-flex flex-wrap align-items-center gap-3">
+                                        <button type="submit" id="submit" class="btn btn-primary px-4 py-2" [disabled]="isSubmitting">
+                                            <span *ngIf="isSubmitting" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                            <i *ngIf="!isSubmitting" class="ti ti-send me-1"></i>
+                                            {{ isSubmitting ? 'Sending to Inbox...' : 'Send Message' }}
+                                        </button>
+                                        <span class="fs-13 text-secondary">
+                                            <i class="ti ti-mail me-1"></i> Direct to <strong class="text-white">sourabhsuman014@gmail.com</strong>
+                                        </span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-lg-5 mt-5 mt-lg-0 border-start border-subtle ps-lg-5">
+                            <h4 class="text-white fw-bold mb-4">Contact Information</h4>
+
+                            <div class="d-flex mb-3">
+                                <div
+                                    class="bg-soft-alt-primary d-flex justify-content-center align-items-center thumb-lg rounded me-3">
+                                    <i class="ti ti-mail fs-20 text-primary"></i>
+                                </div>
+                                <div class="align-self-center">
+                                    <span class="d-block text-muted fs-12 text-uppercase">Email Address</span>
+                                    <a [href]="'mailto:' + personal.email" class="text-white fw-medium fs-15">{{
+                                        personal.email }}</a>
+                                </div>
+                            </div>
+
+                            <div class="d-flex mb-3">
+                                <div
+                                    class="bg-soft-alt-success d-flex justify-content-center align-items-center thumb-lg rounded me-3">
+                                    <i class="ti ti-phone fs-20 text-success"></i>
+                                </div>
+                                <div class="align-self-center">
+                                    <span class="d-block text-muted fs-12 text-uppercase">Phone Number</span>
+                                    <a [href]="'tel:' + personal.phone" class="text-white fw-medium fs-15">{{
+                                        personal.phone }}</a>
+                                </div>
+                            </div>
+
+                            <div class="d-flex mb-3">
+                                <div
+                                    class="bg-soft-alt-info d-flex justify-content-center align-items-center thumb-lg rounded me-3">
+                                    <i class="ti ti-map-pin fs-20 text-info"></i>
+                                </div>
+                                <div class="align-self-center">
+                                    <span class="d-block text-muted fs-12 text-uppercase">Location</span>
+                                    <span class="text-white fw-medium fs-15">{{ personal.location }}</span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex mb-3">
+                                <div
+                                    class="bg-soft-alt-primary d-flex justify-content-center align-items-center thumb-lg rounded me-3">
+                                    <i class="lab la-linkedin fs-22 text-primary"></i>
+                                </div>
+                                <div class="align-self-center">
+                                    <span class="d-block text-muted fs-12 text-uppercase">LinkedIn Profile</span>
+                                    <a [href]="personal.linkedin" target="_blank" rel="noopener noreferrer"
+                                        class="text-white fw-medium fs-15">linkedin.com/in/sourabh-suman04</a>
+                                </div>
+                            </div>
+
+                            <div class="d-flex mb-4">
+                                <div
+                                    class="bg-soft-alt-primary d-flex justify-content-center align-items-center thumb-lg rounded me-3">
+                                    <i class="lab la-github fs-22 text-white"></i>
+                                </div>
+                                <div class="align-self-center">
+                                    <span class="d-block text-muted fs-12 text-uppercase">GitHub Profile</span>
+                                    <a [href]="personal.github" target="_blank" rel="noopener noreferrer"
+                                        class="text-white fw-medium fs-15">github.com/SourabhSuman04</a>
+                                </div>
+                            </div>
+
+                            <div class="card-bg border border-subtle p-3 rounded">
+                                <span class="text-muted fs-13 d-block mb-1">Looking for my CV?</span>
+                                <a [href]="personal.resumeUrl" [download]="personal.resumeUrl"
+                                    class="btn btn-outline-primary btn-sm w-100">
+                                    <i class="ti ti-file-text me-1"></i> Download ATS Resume (PDF)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end card-->
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
+<!-- end contact us -->

@@ -1,0 +1,31 @@
+<!-- Style switcher -->
+<div id="style-switcher" [style.left]="isOpen ? '0px' : '-189px'">
+    <div>
+        <h3 class="fw-medium mb-0">Select Your Choice</h3>
+        <hr class="hr-dashed my-3">
+        <ul class="pattern">
+            <li>
+                <a class="color1" href="javascript:void(0);" (click)="setColor('default', $event)"></a>
+            </li>
+            <li>
+                <a class="color2" href="javascript:void(0);" (click)="setColor('info', $event)"></a>
+            </li>
+            <li>
+                <a class="color3" href="javascript:void(0);" (click)="setColor('warning', $event)"></a>
+            </li>
+            <li>
+                <a class="color4" href="javascript:void(0);" (click)="setColor('orange', $event)"></a>
+            </li>
+            <li>
+                <a class="color5" href="javascript:void(0);" (click)="setColor('purple', $event)"></a>
+            </li>
+            <li>
+                <a class="color6" href="javascript:void(0);" (click)="setColor('success', $event)"></a>
+            </li>
+        </ul>
+    </div>
+    <div class="bottom">
+        <a href="javascript:void(0);" class="settings rounded-end" (click)="toggleSwitcher($event)"><i class="las la-paint-brush fs-22"></i></a>
+    </div>
+</div>
+<!-- end Style switcher -->

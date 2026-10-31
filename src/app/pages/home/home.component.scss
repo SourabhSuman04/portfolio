@@ -1,0 +1,71 @@
+.hero-profile-img {
+  max-height: 460px;
+  object-fit: contain;
+}
+
+.personal-detail-title {
+  display: inline-block;
+  min-width: 130px;
+  font-weight: 600;
+  color: #212529;
+}
+
+.personal-detail-info {
+  color: #495057;
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  text-decoration: none;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.filter-tab li {
+  cursor: pointer;
+  user-select: none;
+  font-weight: 500;
+  padding: 6px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+
+  &.active {
+    background-color: var(--bs-primary, #00bcd4);
+    color: #ffffff !important;
+  }
+}
+
+.accordion-button {
+  cursor: pointer;
+  
+  &:not(.collapsed) {
+    background-color: rgba(0, 188, 212, 0.05);
+  }
+}
+
+.picture-item {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

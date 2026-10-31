@@ -1,0 +1,149 @@
+<!-- start hero -->
+<section class="hero-one position-relative" id="contact-hero">
+    <div class="container position-relative z-i-2">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-8 text-center">
+                <span class="badge badge-soft-cyan mb-3">Connect</span>
+                <h1 class="hero-title text-white">Let's Build Something Great Together</h1>
+                <p class="hero-subtitle">
+                    Available for full-time opportunities, high-impact consulting, and enterprise software engineering projects.
+                </p>
+            </div><!--end col-->                  
+        </div><!--end row-->             
+    </div><!-- end container -->
+</section>
+<!-- end hero -->
+
+<!-- start contact us -->
+<section class="section bg-light" id="contact">
+    <div class="container position-relative z-i-2">
+        <div class="row">
+            <div class="col-12">
+                <div class="card border-0 p-4 p-md-5">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <span class="badge badge-soft-cyan mb-2">Inquiries</span>
+                            <h2 class="fs-2 fw-bold text-white mb-3">Send a Direct Message</h2>
+                            <p class="text-secondary fs-16 mb-4">
+                                I am always interested in connecting with developers, engineering leaders, and recruiters. If you have an exciting full stack opportunity, a challenging project, or want to discuss technical architectures, feel free to reach out.
+                            </p>
+                            
+                            <form (submit)="$event.preventDefault(); submitContact()" name="contactForm">
+                                <div *ngIf="contactSuccess" class="alert alert-success py-3 mb-3 d-flex align-items-center">
+                                    <i class="ti ti-circle-check fs-24 me-2 text-success"></i>
+                                    <div>
+                                        <h6 class="text-white mb-1 fw-bold">Message Dispatched!</h6>
+                                        <p class="mb-0 fs-14 text-light">{{ contactSuccess }}</p>
+                                    </div>
+                                </div>
+
+                                <div *ngIf="contactError" class="alert alert-danger py-3 mb-3">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="ti ti-alert-triangle fs-22 me-2 text-danger"></i>
+                                        <div class="fs-14">{{ contactError }}</div>
+                                    </div>
+                                    <div *ngIf="mailToUrl" class="mt-2">
+                                        <a [href]="mailToUrl" class="btn btn-sm btn-primary">
+                                            <i class="ti ti-mail-forward me-1"></i> Send via Your Mail Client Instead
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label" for="name">Your Name <span class="text-danger">*</span></label>
+                                        <input type="text" [(ngModel)]="contactForm.name" name="name" class="form-control" placeholder="Sourabh Suman" id="name" required />
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label" for="email">Your Email <span class="text-danger">*</span></label>
+                                        <input type="email" [(ngModel)]="contactForm.email" name="email" class="form-control" placeholder="you@example.com" id="email" required />
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label class="form-label" for="subject">Subject <span class="text-danger">*</span></label>
+                                        <input type="text" [(ngModel)]="contactForm.subject" name="subject" class="form-control" placeholder="Software Engineering Opportunity" id="subject" required />
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label class="form-label" for="message">Message <span class="text-danger">*</span></label>
+                                        <textarea class="form-control" [(ngModel)]="contactForm.message" name="message" id="message" placeholder="Hi Sourabh, we'd like to discuss..." rows="4" required></textarea>
+                                    </div>
+                                    <div class="col-12 d-flex flex-wrap align-items-center gap-3">
+                                        <button type="submit" id="submit" class="btn btn-primary px-4 py-2" [disabled]="isSubmitting">
+                                            <span *ngIf="isSubmitting" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                            <i *ngIf="!isSubmitting" class="ti ti-send me-1"></i>
+                                            {{ isSubmitting ? 'Sending to Inbox...' : 'Send Message' }}
+                                        </button>
+                                        <span class="fs-13 text-secondary">
+                                            <i class="ti ti-mail me-1"></i> Direct to <strong class="text-white">sourabhsuman014@gmail.com</strong>
+                                        </span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-lg-5 mt-5 mt-lg-0 border-start border-subtle ps-lg-5">
+                            <h4 class="text-white fw-bold mb-4">Contact Information</h4>
+                            
+                            <div class="d-flex mb-3">
+                                <div class="bg-soft-alt-primary d-flex justify-content-center align-items-center thumb-lg rounded me-3">
+                                    <i class="ti ti-mail fs-20 text-primary"></i>
+                                </div>
+                                <div class="align-self-center">
+                                    <span class="d-block text-muted fs-12 text-uppercase">Email Address</span>
+                                    <a [href]="'mailto:' + personal.email" class="text-white fw-medium fs-15">{{ personal.email }}</a>
+                                </div>
+                            </div>
+
+                            <div class="d-flex mb-3">
+                                <div class="bg-soft-alt-success d-flex justify-content-center align-items-center thumb-lg rounded me-3">
+                                    <i class="ti ti-phone fs-20 text-success"></i>
+                                </div>
+                                <div class="align-self-center">
+                                    <span class="d-block text-muted fs-12 text-uppercase">Phone Number</span>
+                                    <a [href]="'tel:' + personal.phone" class="text-white fw-medium fs-15">{{ personal.phone }}</a>
+                                </div>
+                            </div>
+
+                            <div class="d-flex mb-3">
+                                <div class="bg-soft-alt-info d-flex justify-content-center align-items-center thumb-lg rounded me-3">
+                                    <i class="ti ti-map-pin fs-20 text-info"></i>
+                                </div>
+                                <div class="align-self-center">
+                                    <span class="d-block text-muted fs-12 text-uppercase">Location</span>
+                                    <span class="text-white fw-medium fs-15">{{ personal.location }}</span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex mb-3">
+                                <div class="bg-soft-alt-primary d-flex justify-content-center align-items-center thumb-lg rounded me-3">
+                                    <i class="lab la-linkedin fs-22 text-primary"></i>
+                                </div>
+                                <div class="align-self-center">
+                                    <span class="d-block text-muted fs-12 text-uppercase">LinkedIn Profile</span>
+                                    <a [href]="personal.linkedin" target="_blank" rel="noopener noreferrer" class="text-white fw-medium fs-15">linkedin.com/in/sourabh-suman04</a>
+                                </div>
+                            </div>
+
+                            <div class="d-flex mb-4">
+                                <div class="bg-soft-alt-primary d-flex justify-content-center align-items-center thumb-lg rounded me-3">
+                                    <i class="lab la-github fs-22 text-white"></i>
+                                </div>
+                                <div class="align-self-center">
+                                    <span class="d-block text-muted fs-12 text-uppercase">GitHub Profile</span>
+                                    <a [href]="personal.github" target="_blank" rel="noopener noreferrer" class="text-white fw-medium fs-15">github.com/SourabhSuman04</a>
+                                </div>
+                            </div>
+
+                            <div class="card-bg border border-subtle p-3 rounded">
+                                <span class="text-muted fs-13 d-block mb-1">Looking for my CV?</span>
+                                <a [href]="personal.resumeUrl" [download]="personal.resumeUrl" class="btn btn-outline-primary btn-sm w-100">
+                                    <i class="ti ti-file-text me-1"></i> Download ATS Resume (PDF)
+                                </a>
+                            </div>
+                        </div>
+                    </div>  
+                </div><!--end card-->
+            </div><!-- end col -->
+        </div><!-- end row -->   
+    </div><!-- end container -->
+</section>
+<!-- end contact us -->

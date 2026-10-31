@@ -1,0 +1,96 @@
+<div class="position-relative">
+    <div class="shape overflow-hidden bg-footer">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
+
+<!-- start footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 border-e-dashed">
+                <a routerLink="/" (click)="navigate('home')">
+                    <span class="fs-22 fw-bold text-white font-secondary">SOURABH<span class="text-primary">.SUMAN</span></span>
+                </a>
+                <p class="my-4 text-muted">
+                    Full Stack Developer specializing in .NET Core, Angular, Java, and SQL Server. Experienced in building enterprise applications in microfinance, insurance claims, document automation, and HR systems.
+                </p>
+                <ul class="list-unstyled footer-social mb-0 mt-sm-0 mt-3">
+                    <li class="list-inline-item">
+                        <a [href]="personal.github" target="_blank" rel="noopener noreferrer" title="GitHub">
+                            <i class="icon-xs" data-feather="github"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a [href]="personal.linkedin" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                            <i class="icon-xs" data-feather="linkedin"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a [href]="'mailto:' + personal.email" title="Email">
+                            <i class="icon-xs" data-feather="mail"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a [href]="'tel:' + personal.phone" title="Phone">
+                            <i class="icon-xs" data-feather="phone"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div><!-- end col -->
+            <div class="col-lg-6 offset-lg-1">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h6 class="text-footer mb-4 mt-sm-0 mt-5">Navigation</h6>
+                        <ul class="list-unstyled footer-list">
+                            <li><a (click)="navigate('home')">Home</a></li>
+                            <li><a (click)="navigate('about')">About Me</a></li>
+                            <li><a (click)="navigate('skills')">Skills</a></li>
+                        </ul>
+                    </div><!-- end col -->
+                    <div class="col-md-4">
+                        <h6 class="text-footer mb-4 mt-sm-0 mt-4">Portfolio</h6>
+                        <ul class="list-unstyled footer-list">
+                            <li><a (click)="navigate('experience')">Experience</a></li>
+                            <li><a (click)="navigate('projects')">Featured Projects</a></li>
+                            <li><a (click)="navigate('other-projects')">Other Projects</a></li>                                    
+                        </ul>
+                    </div><!-- end col -->
+                    <div class="col-md-4">
+                        <h6 class="text-footer mb-4 mt-sm-0 mt-4">Connect</h6>
+                        <ul class="list-unstyled footer-list">
+                            <li><a (click)="navigate('education')">Education</a></li>
+                            <li><a (click)="navigate('contact')">Contact Me</a></li>
+                            <li><a [href]="personal.resumeUrl" [download]="personal.resumeUrl">Download Resume</a></li>
+                        </ul>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div>
+    <!-- end container -->
+</footer>
+<!-- end footer -->
+
+<!-- start footer alter -->
+<div class="footer-alt">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <p> &copy; {{ currentYear }} {{ personal.name }}. Designed with <i class="las la-heart text-danger"></i> &bull; Full Stack Developer</p>
+            </div>
+            <div class="col-sm-6 text-sm-end">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item">
+                        <span class="text-muted"><i class="ti ti-map-pin me-1"></i>{{ personal.location }}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</div>
+<!-- end footer alter -->

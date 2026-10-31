@@ -1,0 +1,99 @@
+<!-- start hero -->
+<section class="hero-one position-relative" id="projects-hero">
+    <div class="container position-relative z-i-2">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-8 text-center">
+                <span class="badge badge-soft-cyan mb-3">Portfolio Portfolio</span>
+                <h1 class="hero-title text-white">Production Applications & Architecture</h1>
+                <p class="hero-subtitle">
+                    Real-world enterprise systems engineered for scale, reliability, and business operational efficiency.
+                </p>
+            </div><!--end col-->                  
+        </div><!--end row-->             
+    </div><!-- end container -->
+</section>
+<!-- end hero -->
+
+<!-- start featured projects -->
+<section class="section bg-light" id="projects">
+    <div class="container position-relative z-i-2">                
+        <div class="row">                    
+            <div class="col-12 filters-group-wrap mb-4">
+                <ul class="filter-tab">
+                    <li [class.active]="selectedCategory === 'all'" (click)="setCategory('all')">All Featured</li>
+                    <li [class.active]="selectedCategory === 'microfinance'" (click)="setCategory('microfinance')">Microfinance</li>
+                    <li [class.active]="selectedCategory === 'insurance'" (click)="setCategory('insurance')">Insurance</li>
+                    <li [class.active]="selectedCategory === 'document automation'" (click)="setCategory('document automation')">Document Automation</li>
+                    <li [class.active]="selectedCategory === 'human resource'" (click)="setCategory('human resource')">HRMS</li>
+                </ul>
+            </div><!--end col-->
+        </div><!--end row-->
+
+        <div class="row g-4 justify-content-center mb-5" id="grid">
+            <div class="col-lg-6 picture-item" *ngFor="let proj of filteredProjects">
+                <div class="card project-card border-0 h-100">
+                    <div class="project-preview-wrap">
+                        <img [src]="proj.image" [alt]="proj.name + ' Mockup Preview'">
+                        <div class="project-preview-overlay"></div>
+                        <span class="project-cat-badge">{{ proj.category }}</span>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="d-flex align-items-center mb-2">
+                            <h4 class="text-white fs-20 fw-bold m-0">{{ proj.name }}</h4>
+                        </div>
+                        
+                        <p class="text-secondary fs-14 mb-3">{{ proj.description }}</p>
+                        
+                        <h6 class="text-white fs-13 fw-bold mb-2 text-uppercase tracking-wider">Key Contributions & Architecture:</h6>
+                        <ul class="contributions-list">
+                            <li *ngFor="let c of proj.contributions">
+                                {{ c }}
+                            </li>
+                        </ul>
+
+                        <div class="border-top border-subtle pt-3 mt-auto">
+                            <span class="fs-12 fw-bold text-muted d-block mb-2 text-uppercase">Technologies:</span>
+                            <div class="d-flex flex-wrap gap-1">
+                                <span *ngFor="let t of proj.techStack" class="tech-tag">
+                                    {{ t }}
+                                </span>
+                            </div>
+                        </div>
+                    </div><!-- end project-body -->
+                </div><!-- end card -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+
+        <!-- Section: Other Technical Projects -->
+        <div class="row justify-content-center mt-5 mb-4">
+            <div class="col-12 col-md-10 col-lg-7 text-center">
+                <span class="badge badge-soft-cyan mb-2">More Explorations</span>
+                <h3 class="fs-3 fw-bold text-white mb-2">Other Technical Projects</h3>
+                <p class="text-secondary fs-15">
+                    Additional production migrations, real-time communication modules, and analytical dashboards.
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" *ngFor="let item of additionalProjects">
+                <div class="card rounded p-4 border-0 h-100 d-flex flex-column">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-soft-alt-primary thumb-md rounded d-flex align-items-center justify-content-center me-3">
+                            <i [class]="'las ' + item.icon + ' text-primary fs-20'"></i>
+                        </div>
+                        <h5 class="text-white fs-17 fw-bold mb-0">{{ item.title }}</h5>
+                    </div>
+                    <p class="text-secondary fs-14 mb-3 flex-grow-1">{{ item.description }}</p>
+                    <div class="d-flex flex-wrap gap-1 mt-auto pt-2 border-top border-subtle">
+                        <span *ngFor="let t of item.tech" class="tech-tag">
+                            {{ t }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end container -->
+</section>
+<!-- end featured projects -->
